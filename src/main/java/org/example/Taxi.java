@@ -108,8 +108,9 @@ public class Taxi extends PublicTransport {
     }
 
     public void goToGasStation() {
-        setFuelVolumn(150);
+        setFuelVolumn(100);
         setStatus(Status.RUNNING);
+        System.out.println("주유소에서 연료를 충전합니다.");
     }
 
     public static void main(String[] args) {

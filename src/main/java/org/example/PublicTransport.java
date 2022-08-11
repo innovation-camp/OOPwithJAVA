@@ -2,7 +2,7 @@ package org.example;
 
 enum Status {STOP, RUNNING, REGULAR, ARRIVED}
 
-public class PublicTransport {
+public abstract class PublicTransport {
     int number;
     int fuelVolumn = 100;
     int velocity = 0;

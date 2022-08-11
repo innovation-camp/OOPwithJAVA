@@ -1,6 +1,6 @@
 package org.example;
 
-enum Status {STOP, RUNNING, REGULAR}
+enum Status {STOP, RUNNING, REGULAR, ARRIVED}
 
 public class PublicTransport {
     int number;
@@ -13,7 +13,13 @@ public class PublicTransport {
 
     Status status;
 
+    protected int getNumber() {
+        return this.number;
+    }
 
+    protected void setNumber(int value) {
+        this.number = value;
+    }
 
     protected int getVelocity() {
         return this.velocity;
@@ -21,6 +27,16 @@ public class PublicTransport {
 
     protected void setVelocity(int value) {
         this.velocity = value;
+    }
+
+    public void speedUp(int value) {
+        setVelocity(value);
+        System.out.println("속도를 " + value + "만큼 올립니다.");
+    }
+
+    public void speedDown(int value) {
+        setVelocity(-value);
+        System.out.println("속도를 " + value + "만큼 내립니다.");
     }
 
     protected int getClient() {

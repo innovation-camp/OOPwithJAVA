@@ -5,7 +5,7 @@ public class Bus extends PublicTransport {
     static int busNumber;
 
     Bus() {
-        this.busNumber++;
+        setNumber(this.busNumber++);
         setMaxClient(30);
         setStatus(Status.RUNNING);
         setFare(1000);
@@ -32,17 +32,8 @@ public class Bus extends PublicTransport {
         }
     }
 
-    public void speedUp(int value) {
-        setVelocity(value);
-        System.out.println("속도를 " + value + "만큼 올립니다.");
-    }
 
-    public void speedDown(int value) {
-        setVelocity(-value);
-        System.out.println("속도를 " + value + "만큼 내립니다.");
-    }
-
-    public void takeBus() {
+    public void take() {
         if (getStatus() != Status.RUNNING) {
             System.out.println("운행 중인 버스에만 탑승할 수 있습니다.");
             return;
@@ -63,7 +54,7 @@ public class Bus extends PublicTransport {
         while (bus.getStatus() == Status.RUNNING) {
             bus.running();
             bus.speedUp(10);
-            bus.takeBus();
+            bus.take();
         }
     }
 }
